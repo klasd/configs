@@ -13,14 +13,19 @@ return require('packer').startup(function(use)
 	}
 
 	use({ 'rose-pine/neovim', as = 'rose-pine' })
-	vim.cmd('colorscheme rose-pine')
+	use({ 'folke/tokyonight.nvim', as = 'tokyonight' })
+
+	-- vim.cmd('colorscheme rose-pine')
+	vim.cmd('colorscheme tokyonight')
 
 	use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 	use('nvim-treesitter/playground')
 	use('theprimeagen/harpoon')
 	use('mbbill/undotree')
 	use('tpope/vim-fugitive')
-
+	use('nvim-tree/nvim-tree.lua')
+	use('nvim-tree/nvim-web-devicons')
+	use('windwp/nvim-autopairs')
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',

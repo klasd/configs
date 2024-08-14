@@ -1,0 +1,79 @@
+""" Map leader to space ---------------------
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set textobj-entire
+set ReplaceWithRegister
+set NERDTree
+
+""" Plugin settings -------------------------
+let g:argtextobj_pairs="[:],(:),<:>"
+
+""" Common settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+set clipboard+=unnamed
+set clipboard+=ideaput
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Mappings --------------------------------
+map <leader>z <Action>(ToggleDistractionFreeMode)
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+
+""" Tool windows
+nnoremap <c-p> :action JumpToLastWindow<CR>
+nnoremap <c-x> :action HideAllWindows<CR>
+
+""" Window navigation
+map <c-\> <Action>(MoveTabRight)
+map <c--> <Action>(MoveTabDown)
+map <c-=> <Action>(Unsplit)
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
+map <TAB> <Action>(NextTab)
+map <s-TAB> <Action>(PreviousTab)
+map <leader>q <Action>(CloseEditor)
+map <leader>aq <Action>(CloseAllEditors)
+
+""" Source code editing
+vnoremap < <gv
+vnoremap > >gv
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+map <leader>rr <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <Leader>f <Action>(ReformatCode)
+map <leader>o <Action>(OptimizeImports)
+nnoremap <c-r> :action RecentFiles<CR>
+map <leader>l <Action>(RecentLocations)
+map <leader>h <Action>(LocalHistory.ShowHistory)
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+map <leader>c <Action>(CommentByLineComment)
+
+""" Source code navigation
+nnoremap <c-/> :action FindInPath<CR>
+nnoremap <c-a> :action GotoAction<CR>
+nnoremap <c-f> :action GotoFile<CR>
+map <leader>u <Action>(FindUsages)
+nnoremap <c-s> :action FileStructurePopup<CR>
+nnoremap gi :action GotoImplementation<CR>
+
+""" Run and debug
+map ,r <Action>(Run)
+map ,tc <Action>(RiderUnitTestCoverSolutionAction)
+map ,ta <Action>(RiderUnitTestRunSolutionAction)
+map ,tf <Action>(RiderUnitTestRerunBrokenSplitAction)
+map ,p <Action>(ToggleLineBreakpoint)
+map ,b <Action>(BuildSolutionAction)
+map ,d <Action>(Debug)

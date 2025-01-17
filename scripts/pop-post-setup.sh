@@ -29,3 +29,5 @@ tar xvzf ~/Downloads/jetbrains-toolbox-2.4.1.32573.tar.gz ~/Downloads/
 
 ##Install Rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+## Test
